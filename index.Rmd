@@ -1,8 +1,8 @@
 ---
 title: "dplyr filter homework"
-author: "Taavi Päll"
+author: "Your Name"
 date: "2019-03-12"
-output: [github_document, html_document]
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
