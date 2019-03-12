@@ -1,0 +1,72 @@
+---
+title: "dplyr filter homework"
+author: "Taavi Päll"
+date: "2019-03-12"
+output: [github_document, html_document]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Exercises
+
+Loading required libraries:
+```{r}
+library(tidyverse)
+library(here)
+```
+
+Importing dataset:
+```{r}
+viruses <- read_csv(here("data", "viruses.csv"))
+```
+
+Print out dataset:
+```{r}
+viruses
+```
+
+
+1. Find all viruses that:
+
+- have genome of over 10000kb
+
+```{r}
+filter(viruses, size_kb > 10000)
+```
+
+- belong to *Papillomaviridae*
+
+```{r}
+filter(viruses, subgroup == "Papillomaviridae")
+```
+
+- are from plants and environment
+
+```{r}
+filter(viruses, host %in% c("plants", "environment"))
+```
+
+- were released between 01. January 1980 - 01. January 1990, including these days:
+
+```{r}
+filter(viruses, release_date > "1980-01-01", release_date < "1990-01-01")
+```
+
+2. there is also between() function in dplyr. 
+
+What does it do? Run ?between
+How can you use it to find viruses with genomes between 1 to 2 kb?
+
+```{r}
+filter(viruses, between(size_kb, 1, 2))
+```
+
+3. Find Enteroviruses:
+
+Hint: use str_detect()
+```{r}
+filter(viruses, str_detect(organism_name, "Enterovirus"))
+```
+
