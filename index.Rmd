@@ -33,25 +33,25 @@ viruses
 - have genome of over 10000kb
 
 ```{r}
-filter(viruses, size_kb > 10000)
+
 ```
 
 - belong to *Papillomaviridae*
 
 ```{r}
-filter(viruses, subgroup == "Papillomaviridae")
+
 ```
 
 - are from plants and environment
 
 ```{r}
-filter(viruses, host %in% c("plants", "environment"))
+
 ```
 
 - were released between 01. January 1980 - 01. January 1990, including these days:
 
 ```{r}
-filter(viruses, release_date > "1980-01-01", release_date < "1990-01-01")
+
 ```
 
 2. there is also between() function in dplyr. 
@@ -60,13 +60,13 @@ What does it do? Run ?between
 How can you use it to find viruses with genomes between 1 to 2 kb?
 
 ```{r}
-filter(viruses, between(size_kb, 1, 2))
+
 ```
 
 3. Find Enteroviruses:
 
 Hint: use str_detect()
 ```{r}
-filter(viruses, str_detect(organism_name, "Enterovirus"))
+
 ```
 
