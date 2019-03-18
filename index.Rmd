@@ -2,7 +2,7 @@
 title: "dplyr filter homework"
 author: "Vassili Kiritsenko"
 date: "2019-03-12"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
